@@ -9,6 +9,7 @@ const compScore_span = document.getElementById("computer-score");
 
 const scoreBoard_div = document.querySelector(".score-board");
 const result_div     = document.querySelector(".result > p");
+const message_div    = document.getElementById("action-message");
 
 const rock_div     = document.getElementById("Rock");
 const paper_div    = document.getElementById("Paper");
@@ -16,6 +17,7 @@ const scissors_div = document.getElementById("Scissors");
 
 const disabled_CSSClass = "disabledChoice";
 const enabled_CSSClass  = "choice";
+
 
 /*
 
@@ -87,6 +89,9 @@ function addEventListeners() {
     rock_div.className     = enabled_CSSClass;
     paper_div.className    = enabled_CSSClass;
     scissors_div.className = enabled_CSSClass;
+
+    //Telling user to make their move
+    message_div.textContent = "Make your move!"
 }
 
 //Removing Events Listeners
@@ -103,7 +108,10 @@ function removeEventListeners() {
     //Changing CSS to show that controls are disabled
     rock_div.className     = disabled_CSSClass;
     paper_div.className    = disabled_CSSClass;
-    scissors_div.className = disabled_CSSClass;;
+    scissors_div.className = disabled_CSSClass;
+
+    //Removing the message for making their move.
+    message_div.textContent = ""
 }
 
 /* Round Logic */
